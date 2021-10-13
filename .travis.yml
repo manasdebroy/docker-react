@@ -1,0 +1,9 @@
+sudo: resources
+services:
+  - docker
+
+ before install:
+  - docker build -t manasdebroy/docker-react -f Dockerfile.dev
+
+ script:
+  - docker run USERNAME/docker-react npm run test -- --coverage  
