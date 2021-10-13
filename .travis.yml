@@ -1,9 +1,9 @@
-sudo: resources
+sudo: required
 services:
   - docker
 
- before install:
-  - docker build -t manasdebroy/docker-react -f Dockerfile.dev
+before_install:
+  - docker build -t manasdebroy/docker-react -f Dockerfile.dev .
 
- script:
-  - docker run USERNAME/docker-react npm run test -- --coverage  
+script:
+  - docker run manasdebroy/docker-react npm run test -- --coverage
